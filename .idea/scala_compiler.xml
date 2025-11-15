@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <option name="separateProdTestSources" value="true" />
+    <profile name="sbt 1" modules="api,api.main,api.test,e-comm-analytics,e-comm-analytics-api,e-comm-analytics-api.main,e-comm-analytics-api.test,e-comm-analytics-processor,e-comm-analytics-processor.main,e-comm-analytics-processor.test,e-comm-analytics.e-comm-analytics-api,e-comm-analytics.e-comm-analytics-api.main,e-comm-analytics.e-comm-analytics-api.test,e-comm-analytics.e-comm-analytics-common,e-comm-analytics.e-comm-analytics-common.main,e-comm-analytics.e-comm-analytics-common.test,e-comm-analytics.e-comm-analytics-processor,e-comm-analytics.e-comm-analytics-processor.main,e-comm-analytics.e-comm-analytics-processor.test,e-comm-analytics.e-comm-analytics-producer,e-comm-analytics.e-comm-analytics-producer.main,e-comm-analytics.e-comm-analytics-producer.test,e-comm-analytics.main,e-comm-analytics.test,processor,processor.main,processor.test,processor.test~1" />
+  </component>
+</project>

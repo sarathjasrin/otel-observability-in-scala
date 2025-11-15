@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaSbtSettings">
+    <option name="linkedExternalProjectsSettings">
+      <SbtProjectSettings>
+        <option name="converterVersion" value="2" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/processor" />
+            <option value="$PROJECT_DIR$/producer" />
+            <option value="$PROJECT_DIR$/project" />
+          </set>
+        </option>
+        <option name="sbtVersion" value="1.11.7" />
+      </SbtProjectSettings>
+      <SbtProjectSettings>
+        <option name="converterVersion" value="2" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/api" />
+            <option value="$PROJECT_DIR$/api/project" />
+          </set>
+        </option>
+        <option name="useSbtShellForBuild" value="true" />
+        <option name="useSbtShellForImport" value="true" />
+      </SbtProjectSettings>
+      <SbtProjectSettings>
+        <option name="converterVersion" value="2" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/processor" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/processor" />
+            <option value="$PROJECT_DIR$/processor/project" />
+          </set>
+        </option>
+        <option name="sbtVersion" value="1.10.7" />
+      </SbtProjectSettings>
+    </option>
+  </component>
+</project>

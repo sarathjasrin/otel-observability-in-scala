@@ -1,0 +1,20 @@
+<configuration>
+
+    <!-- Console output -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger level -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <!-- (Optional) Override specific libraries -->
+<!--    <logger name="org.apache.http" level="WARN" />-->
+<!--    <logger name="akka" level="ERROR" />-->
+<!--    <logger name="com.mycompany" level="DEBUG" />-->
+
+</configuration>
