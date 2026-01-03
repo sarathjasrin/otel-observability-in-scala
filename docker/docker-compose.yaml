@@ -41,22 +41,14 @@ services:
       KAFKA_CLUSTERS_0_NAME: 'My Local Kafka'
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: 'kbroker:29092'
 
-  otel-collector:
-    image: otel/opentelemetry-collector-contrib:latest
+  otel-lgtm:
+    image: grafana/otel-lgtm
     ports:
-      - "4317:4317" # OTLP gRPC receiver
-      - "4318:4318" # OTLP http receiver
-    command: [ "--config=/etc/otel-collector-config.yaml" ]
-    volumes:
-      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+      - "3000:3000"
+      - "4317:4317"
+      - "4318:4318"
+    networks:
+      - static-network
 
-  jaeger:
-    image: jaegertracing/all-in-one:latest
-    depends_on: [ otel-collector ]
-    ports:
-      - "16686:16686"  # Jaeger UI
-
-  grafana:
-    image: grafana/grafana:latest
-    ports:
-      - "5000:3000"
+networks:
+  static-network:

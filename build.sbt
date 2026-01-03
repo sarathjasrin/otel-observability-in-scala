@@ -27,6 +27,8 @@ lazy val common = (project in file("common"))
       Libraries.otelContextStorage,
       Libraries.openTel,
       Libraries.openAutoConfig,
+      Libraries.otelLogbackAppender,
+      Libraries.otlpLoggerExporter,
       Libraries.scalaTest      % Test,
       Libraries.scalaCheck     % Test,
       Libraries.catsScalaCheck % Test

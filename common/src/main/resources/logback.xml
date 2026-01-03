@@ -3,18 +3,22 @@
     <!-- Console output -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d %-5level [%mdc{trace_id} %mdc{span_id}] %logger - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Root logger level -->
-    <root level="INFO">
-        <appender-ref ref="CONSOLE" />
-    </root>
+    <!-- OpenTelemetry Logback Appender -->
+    <appender name="OTEL" class="io.opentelemetry.instrumentation.logback.v1_0.OpenTelemetryAppender">
+        <!-- Optional: customize formatting, but OTLP sends structured logs anyway -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d %-5level [%mdc{trace_id} %mdc{span_id}] %logger - %msg%n</pattern>
+        </layout>
+    </appender>
 
-    <!-- (Optional) Override specific libraries -->
-<!--    <logger name="org.apache.http" level="WARN" />-->
-<!--    <logger name="akka" level="ERROR" />-->
-<!--    <logger name="com.mycompany" level="DEBUG" />-->
+    <!-- Root logger -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="OTEL"/>
+    </root>
 
 </configuration>

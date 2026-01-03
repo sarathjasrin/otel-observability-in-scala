@@ -17,6 +17,7 @@ object Telemetry {
   def init[F[_]: Async: Console: LiftIO](name: String, endpoint: String): Resource[F, Telemetry[F]] = {
     sys.props.getOrElseUpdate("otel.service.name", name)
     sys.props.getOrElseUpdate("otel.exporter.otlp.endpoint", endpoint)
+    sys.props.getOrElseUpdate("otel.exporter.otlp.logs.endpoint", endpoint)
     sys.props.getOrElseUpdate("otel.exporter.otlp.protocol", "http/protobuf")
     implicit val provider: LocalProvider[F, Context] = IOLocalContextStorage.localProvider[F]
     OtelJava.autoConfigured[F]().map { otel =>

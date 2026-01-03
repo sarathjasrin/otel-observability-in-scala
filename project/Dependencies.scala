@@ -2,20 +2,22 @@ import sbt.*
 
 object Dependencies {
   object Versions {
-    val fs2Kafka           = "3.9.0"
-    val cats               = "2.13.0"
-    val catsEffect         = "3.6.1"
-    val fs2                = "3.12.0"
-    val circe              = "0.14.2"
-    val http4s             = "0.23.32"
-    val pureConfig         = "0.17.9"
-    val logback            = "1.5.19"
-    val scalaCheck         = "1.19.0"
-    val scalaTest          = "3.2.19"
-    val catsScalaCheck     = "0.3.2"
-    val log4J              = "2.7.0"
-    val otel               = "0.14.0"
-    val openTel            = "1.55.0"
+    val fs2Kafka         = "3.9.0"
+    val cats             = "2.13.0"
+    val catsEffect       = "3.6.1"
+    val fs2              = "3.12.0"
+    val circe            = "0.14.2"
+    val http4s           = "0.23.32"
+    val pureConfig       = "0.17.9"
+    val logback          = "1.5.19"
+    val scalaCheck       = "1.19.0"
+    val scalaTest        = "3.2.19"
+    val catsScalaCheck   = "0.3.2"
+    val log4J            = "2.7.0"
+    val otel             = "0.14.0"
+    val openTel          = "1.55.0"
+    val openTelLog       = "1.9.2-alpha"
+    val otelLogCollector = "1.26.0-alpha"
   }
 
   object Libraries {
@@ -48,8 +50,10 @@ object Dependencies {
     lazy val otelJava           = "org.typelevel" %% "otel4s-oteljava"                 % Versions.otel
     lazy val otelContextStorage = "org.typelevel" %% "otel4s-oteljava-context-storage" % Versions.otel
 
-    lazy val openTel        = "io.opentelemetry" % "opentelemetry-exporter-otlp"               % Versions.openTel % Runtime
-    lazy val openAutoConfig = "io.opentelemetry" % "opentelemetry-sdk-extension-autoconfigure" % Versions.openTel % Runtime
+    lazy val openTel             = "io.opentelemetry"                 % "opentelemetry-exporter-otlp"               % Versions.openTel % Runtime
+    lazy val openAutoConfig      = "io.opentelemetry"                 % "opentelemetry-sdk-extension-autoconfigure" % Versions.openTel % Runtime
+    lazy val otelLogbackAppender = "io.opentelemetry.instrumentation" % "opentelemetry-logback-1.0"                 % Versions.openTelLog % Runtime
+    val otlpLoggerExporter       = "io.opentelemetry"                 % "opentelemetry-exporter-otlp-logs"          % Versions.otelLogCollector
 
     // Test
     lazy val scalaTest      = "org.scalatest"     %% "scalatest"       % Versions.scalaTest
